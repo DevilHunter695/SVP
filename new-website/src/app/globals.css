@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── SVP brand tokens ──────────────────────────────────────────── */
+:root {
+  /* Core palette */
+  --svp-navy: #1d4496;
+  --svp-navy-dark: #192a3d;
+  --svp-slate: #3a4f66;
+  --svp-coral: #f0504f;
+  --svp-coral-hover: #f1665d;
+  --svp-blue: #2872fa;
+  --svp-blue-dark: #1559ed;
+
+  /* Logo gradient (purple → pink → coral) */
+  --svp-grad-start: #6b4fbb;
+  --svp-grad-mid: #c94fa0;
+  --svp-grad-end: #f0504f;
+  --svp-gradient: linear-gradient(135deg, #6b4fbb 0%, #c94fa0 50%, #f0504f 100%);
+
+  /* Backgrounds */
+  --svp-bg-page: #fafbfc;
+  --svp-bg-light: #f2f5f7;
+  --svp-bg-card: #ffffff;
+  --svp-bg-dark: #121519;
+  --svp-bg-footer: #404041;
+
+  /* Borders & shadows */
+  --svp-border: #e1e8ed;
+  --svp-shadow: 0px 12px 18px -6px rgba(34, 56, 101, 0.08);
+}
+
+/* Expose SVP tokens as Tailwind v4 color/utility classes
+   (e.g. text-svp-navy, bg-svp-coral, border-svp-border) */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-pt-sans), "PT Sans", sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-pt-sans), "PT Sans", sans-serif;
+
+  --color-svp-navy: var(--svp-navy);
+  --color-svp-navy-dark: var(--svp-navy-dark);
+  --color-svp-slate: var(--svp-slate);
+  --color-svp-coral: var(--svp-coral);
+  --color-svp-coral-hover: var(--svp-coral-hover);
+  --color-svp-blue: var(--svp-blue);
+  --color-svp-blue-dark: var(--svp-blue-dark);
+  --color-svp-bg-page: var(--svp-bg-page);
+  --color-svp-bg-light: var(--svp-bg-light);
+  --color-svp-bg-card: var(--svp-bg-card);
+  --color-svp-bg-dark: var(--svp-bg-dark);
+  --color-svp-bg-footer: var(--svp-bg-footer);
+  --color-svp-border: var(--svp-border);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Map shadcn primitives onto the SVP palette so default components
+     (Button, Card, Badge, etc.) inherit the brand automatically. */
+  --background: #fafbfc;
+  --foreground: #3a4f66;
+  --card: #ffffff;
+  --card-foreground: #3a4f66;
+  --popover: #ffffff;
+  --popover-foreground: #3a4f66;
+  --primary: #f0504f;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f5f7;
+  --secondary-foreground: #1d4496;
+  --muted: #f2f5f7;
+  --muted-foreground: #6b7a8d;
+  --accent: #f2f5f7;
+  --accent-foreground: #1d4496;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e1e8ed;
+  --input: #e1e8ed;
+  --ring: #f0504f;
+  --radius: 0.5rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* ── Dark mode tokens ──────────────────────────────────────────── */
+.dark {
+  --background:              #0b0f1a;
+  --foreground:              #dde4f0;
+  --card:                    #141c2c;
+  --card-foreground:         #dde4f0;
+  --popover:                 #141c2c;
+  --popover-foreground:      #dde4f0;
+  --primary:                 #f0504f;
+  --primary-foreground:      #ffffff;
+  --secondary:               #1a2338;
+  --secondary-foreground:    #94a3b8;
+  --muted:                   #1a2338;
+  --muted-foreground:        #64748b;
+  --accent:                  #1a2338;
+  --accent-foreground:       #94a3b8;
+  --border:                  rgba(255,255,255,0.09);
+  --input:                   rgba(255,255,255,0.09);
+  --ring:                    #f0504f;
+
+  /* SVP tokens in dark mode */
+  --svp-navy:       #6f9bf5;
+  --svp-bg-page:    #0b0f1a;
+  --svp-bg-light:   #0f1726;
+  --svp-bg-card:    #141c2c;
+  --svp-bg-dark:    #060912;
+  --svp-border:     rgba(255,255,255,0.08);
+  --svp-slate:      #97a6bd;
+  --svp-bg-footer:  #070910;
+  --svp-navy-dark:  #e7edf8;
+  --svp-shadow:     0px 16px 30px -12px rgba(0,0,0,0.65);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  /* Guard against accidental horizontal scroll on small screens */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--svp-navy-dark);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  .svp-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  /* Section label: uppercase, tracked, coral */
+  .svp-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--svp-coral);
+  }
+  .svp-text-gradient {
+    background: var(--svp-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Reusable page section wrapper */
+  .svp-section {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  /* Surface card that respects light/dark tokens */
+  .svp-surface {
+    background: var(--svp-bg-card);
+    border: 1px solid var(--svp-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--svp-shadow);
+  }
+
+  /* Glass chip used across pages (theme-adaptive) */
+  .svp-chip {
+    background: color-mix(in srgb, var(--svp-bg-card) 70%, transparent);
+    border: 1px solid var(--svp-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* 3D perspective parent for magnetic buttons */
+  .svp-perspective {
+    perspective: 700px;
+    transform-style: preserve-3d;
+  }
+}
+
+/* Honour reduced-motion across all JS/CSS animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
