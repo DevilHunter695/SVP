@@ -102,7 +102,7 @@ export const PEOPLE: Person[] = [
     name: "Prof. R Vaidyanathan",
     role: "Mentor & Advisor",
     group: "Advisory Board",
-    photo: "/Assets/People/profr.jpg",
+    photo: "/Assets/People/profr.png",
     location: "",
     focus: [],
     bio:
@@ -127,7 +127,7 @@ export const PEOPLE: Person[] = [
     name: "Dr. Uday Saxena",
     role: "Advisor",
     group: "Advisory Board",
-    photo: "/Assets/People/Uday.png",
+    photo: "/Assets/People/Uday.jpeg",
     location: "",
     focus: [],
     bio:
@@ -247,7 +247,7 @@ export const PEOPLE: Person[] = [
   name: "Krishank Ayyella",
   role: "Management Trainee",
   group: "Investment Team",
-  photo: "/Assets/People/krishank.jpg",
+  photo: "/Assets/People/krishank.png",
   location: "",
   focus: [],
   bio:
