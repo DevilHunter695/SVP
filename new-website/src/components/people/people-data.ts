@@ -102,7 +102,7 @@ export const PEOPLE: Person[] = [
     name: "Prof. R Vaidyanathan",
     role: "Mentor & Advisor",
     group: "Advisory Board",
-    photo: "",
+    photo: "/Assets/People/profr.jpg",
     location: "",
     focus: [],
     bio:
@@ -151,7 +151,7 @@ export const PEOPLE: Person[] = [
     name: "Dr. Suresh Poosala",
     role: "Advisor",
     group: "Advisory Board",
-    photo: "",
+    photo: "/Assets/People/suresh.jpg",
     location: "",
     focus: [],
     bio:
@@ -223,7 +223,7 @@ export const PEOPLE: Person[] = [
     name: "Nikhil Avinash Chitra",
     role: "Junior Partner",
     group: "Investment Team",
-    photo: "",
+    photo: "/Assets/People/nikhil.jpg",
     location: "",
     focus: [],
     bio:
@@ -235,13 +235,25 @@ export const PEOPLE: Person[] = [
     name: "M Kamesh Rao",
     role: "Analyst",
     group: "Investment Team",
-    photo: "",
+    photo: "/Assets/People/kamesh.jpg",
     location: "",
     focus: [],
     bio:
       "As a Chartered Accountant, Kamesh brings a strong blend of financial acumen, real world forensic exposure, institutional grade due diligence capabilities, and risk assessment expertise. Working closely with the General Partner team, he has developed the ability to navigate complex personalities, diverse thought processes, and high pressure decision making environments with maturity and analytical discipline.\n\nHe is involved across deal origination, due diligence, financial modeling, transaction structuring, and investment execution, with past exposure to transactions exceeding USD 250 million across venture capital, banking, and risk consulting environments.\n\nPassionate about investing and institutional finance, Kamesh combines strategic thinking with execution focus to support scalable investment opportunities and long term value creation across emerging sectors. His long term ambition is to eventually build and manage an investment fund of his own.",
     highlights: [],
   },
+  {
+  id: "krishank-ayyella",
+  name: "Krishank Ayyella",
+  role: "Management Trainee",
+  group: "Investment Team",
+  photo: "/Assets/People/krishank.jpg",
+  location: "",
+  focus: [],
+  bio:
+    "Krishank Ayyella brings a technology focused and analytical perspective to investing, with a strong foundation in computer science, emerging technologies, and digital innovation. Currently pursuing Computer Science Engineering, he combines technical depth with curiosity toward understanding scalable businesses, technology ecosystems, and venture building.\n\nHis experience spans artificial intelligence, computer vision, cybersecurity, and software development, with exposure to building intelligent systems and exploring how emerging technologies can create real world impact. Through academic projects, research initiatives, and enterprise technology exposure, he has developed a practical understanding of problem solving, system design, and technology driven transformation.\n\nAs a Management Trainee, Krishank works closely with the investment team, gaining exposure across research, technology evaluation, and strategic initiatives. With a builder oriented mindset and long term entrepreneurial ambitions, he aims to bridge engineering insight with investment thinking and value creation.",
+  highlights: [],
+},
   {
     id: "srb-ramesh-chandra",
     name: "SRB Ramesh Chandra",
